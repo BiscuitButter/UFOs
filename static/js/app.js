@@ -24,7 +24,7 @@ function buildTable(data) {
 }
 
 // 1. Create a variable to keep track of all the filters as an object.
-var filters = {}
+var filters = []
   
 // 3. Use this function to update the filters. 
 function updateFilters() {
@@ -53,9 +53,9 @@ function updateFilters() {
     // 5. If a filter value was entered then add that filterId and value
     // to the filters list. Otherwise, clear that filter from the filters object.
     if (date != null) {
-      filters = {dateId: date};
+      filters.push({dateId: date});
     } else {
-      filters.remove(dateId); 
+      filters.remove({dateId: date}); 
     } 
 
     if (city == null) {
@@ -107,7 +107,7 @@ function updateFilters() {
   // document.getElementById("#country").addEventListener("submit", updateFilters);
   // document.getElementById("#shape").addEventListener("submit", updateFilters);
 
-  d3.selectAll("#filter-btn").on("submit",updateFilters)
+  // d3.selectAll("#filter-btn").on("submit",updateFilters)
 
   // function formSubmit(e) {
   //   if(e && e.keyCode == 13) {
