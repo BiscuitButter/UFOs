@@ -26,6 +26,7 @@ function buildTable(data) {
 // }
 
 function handleClick() {
+    let date = d3.select("#datetime").property("value");
     let city = d3.select("#city").property("value");
     let filteredData = tableData;
     
